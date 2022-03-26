@@ -12,7 +12,7 @@ def send_valid_checksum(conn: socket):
     conn.sendto(get_package(message), (server_name, server_port))
 
 
-def send_not_valid_checksum(conn: socket):
+def send_not_valid_checksum(conn: socket):                                              #Para fins didáticos criamos esta função para demonstrar a situação ocorrida ao enviar a mensagem com o Checksum inválido
     message = input("Not valid checksum - Enter text: ")
     msg_to_send = message + "\x01" + "100011010100101010"
     conn.sendto(msg_to_send.encode(), (server_name, server_port))
